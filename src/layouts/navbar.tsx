@@ -19,7 +19,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <button onClick={() => setOpen(!open)} className="md:hidden px-[1em] font-bold">
+      <button onClick={() => setOpen(!open)} className="burger md:hidden px-[1em] font-bold">
         {open ? "X" : "☰"}
       </button>
     </nav>
