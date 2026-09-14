@@ -133,8 +133,7 @@ function projectPage(){
         scrollTrigger: {
             trigger: ".projectsPage",
             start: "top 80%",
-            end: "bottom 100%",
-            markers: true
+            end: "bottom 100%"
         }
     })
 
