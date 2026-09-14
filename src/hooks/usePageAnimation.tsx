@@ -73,7 +73,7 @@ function homeAnimation(){
         },1
     ).fromTo(".mypicture", 
         {
-            y: 230,
+            y: 280,
             filter: "blur(5px)"
         },
         {
@@ -90,8 +90,7 @@ function homeAnimation(){
         {
             opacity: 1,
             filter: "blur(0px)",
-            duration: 1.4,
-            ease: "power2.in"
+            duration: 1.1,
         },1
     ).fromTo(".glassdoor", 
         {
@@ -99,10 +98,9 @@ function homeAnimation(){
             filter: "blur(10px)"
         },
         {
-            opacity: 1.2,
+            opacity: 1,
             filter: "blur(0px)",
-            duration: 1,
-            ease: "power2.in"
+            duration: 1.3,
         },1
     ).fromTo(".freelancer", 
         {
@@ -110,10 +108,9 @@ function homeAnimation(){
             filter: "blur(10px)"
         },
         {
-            opacity: 1.1,
+            opacity: 1,
             filter: "blur(0px)",
-            duration: 1,
-            ease: "power2.in"
+            duration: 1.4,
         },1
     ).fromTo(".upwork", 
         {
@@ -123,8 +120,7 @@ function homeAnimation(){
         {
             opacity: 1,
             filter: "blur(0px)",
-            duration: 1,
-            ease: "power2.in"
+            duration: 1.7,
         },1
     )
     
