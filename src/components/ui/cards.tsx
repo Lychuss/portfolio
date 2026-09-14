@@ -16,12 +16,11 @@ let arrProjects = [
 export default function Cards() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4 py-10">
-            {arrProjects.map((project, index) => (
+            {arrProjects.map((project, i) => (
                 <div
-                    key={index}
-                    className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300"
-                >
-                    {/* Image */}
+                    key={i}
+                    className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md 
+                        transition-shadow duration-300">
                     <div className="relative w-full aspect-[4/3] bg-gray-900 overflow-hidden">
                         <Image
                             src={project.image}
@@ -31,20 +30,15 @@ export default function Cards() {
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
-
-                    {/* Content */}
                     <div className="p-5">
                         <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-4">
                             {project.name}
                         </h3>
-
-                        {/* Tags */}
                         <div className="flex flex-wrap gap-2">
-                            {project.tech.map((tag, tagIndex) => (
+                            {project.tech.map((tag, i) => (
                                 <span
-                                    key={tagIndex}
-                                    className="px-3 py-1 text-sm text-gray-700 bg-white border border-gray-200 rounded-full"
-                                >
+                                    key={i}
+                                    className="px-3 py-1 text-sm text-gray-700 bg-white border border-gray-200 rounded-full">
                                     {tag}
                                 </span>
                             ))}
