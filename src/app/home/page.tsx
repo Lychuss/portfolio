@@ -28,39 +28,43 @@ export default function Home(){
     }
 
     return <main>
+ 
+        <section className="mainPage w-full flex flex-col">
 
-        <section className="mainPage w-full min-h-screen">
-
-            <div className="relative p-4">
+            <div className="flex flex-col p-3">
                 <h1 className="webdev font-bold text-[2rem] items-center leading-18 tracking-tighter">WEB DEVELOPER</h1>
                 <p className="quote font-semibold text-[0.9rem]">
                     I turn your ideas into modern, responsive, and functional websites designed to 
                     bring your vision to life and help you achieve your goals.
                 </p>
                 <Button 
-                    className="letscollab border rounded-full w-[150px] h-auto text-xs mt-4 py-2 bg-black text-white font-semibold 
+                    className="letscollab border rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold 
                         cursor-pointer"
                     onClick={letsCollabClicked}
                     children="Let's collaborate ↗"
                     ref={collabRef}/>
             </div>
 
-            <div className="name relative text-center self-end text-[6.6rem] items-center top-[25px] leading-20 tracking-tighter">
+            <div className="name flex flex-col text-center text-[6.6rem] items-center leading-20 tracking-tighter">
                 <h1 className="font-bungee-outline">RAPHA</h1>
                 <h1 className="font-bungee-inline">MHARC</h1>
             </div>
 
-            <Image src={"/images/my-image.png"} alt="my-image" width={1000} height={1000} className="mypicture relative bottom-[50px] z-10 w-full h-auto"/>
+            <div className="mypicture relative z-10 w-full h-auto">
+                <Image src={"/images/my-image.png"} alt="my-image" width={1000} height={1000}/>
 
-            <SiFacebook className="facebook relative bottom-[200px] left-[90px] rotate-300 active:scale-75 transition-all duration-300 ease-in-out"/>
-            <SiUpwork className="upwork relative bottom-[160px] left-[50px] rotate-20 active:scale-75 transition-all duration-300 ease-in-out"/>
-            <SiGlassdoor className="glassdoor relative bottom-[250px] left-[260px] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
-            <SiFreelancer className="freelancer relative bottom-[220px] left-[330px] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"
-                onClick={mediaClicked}/>
+                <div className="absolute inset-0">
+                    <SiFacebook className="facebook absolute left-[20%] top-[20%] rotate-300 active:scale-75 transition-all duration-300 ease-in-out"/>
+                    <SiUpwork className="upwork absolute left-[5%] top-[40%] rotate-20 active:scale-75 transition-all duration-300 ease-in-out"/>
+                    <SiGlassdoor className="glassdoor absolute right-[10%] top-[40%]  rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
+                    <SiFreelancer className="freelancer absolute right-[25%] top-[20%] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"
+                        onClick={mediaClicked}/>
+                </div>
+            </div>
 
         </section>
 
-        <section className="projectsPage relative bottom-[70px] w-full min-h-screen">
+        <section className="projectsPage flex flex-col w-full min-h-screen">
             <h1 className="project text-[2em] font-bold font-dm-sans text-center my-5">PERSONAL PROJECTS</h1>
 
             <div className="flex justify-between text-[0.6em] font-bold items-center p-5">
