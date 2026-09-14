@@ -38,14 +38,14 @@ export default function Home(){
                     bring your vision to life and help you achieve your goals.
                 </p>
                 <Button 
-                    className="letscollab border rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold 
+                    className="letscollab rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold 
                         cursor-pointer"
                     onClick={letsCollabClicked}
                     children="Let's collaborate ↗"
                     ref={collabRef}/>
             </div>
 
-            <div className="name flex flex-col text-center text-[6.6rem] items-center leading-20 tracking-tighter">
+            <div className="name flex flex-col mx-auto text-[6.5em] items-center leading-20 tracking-tighter">
                 <h1 className="font-bungee-outline">RAPHA</h1>
                 <h1 className="font-bungee-inline">MHARC</h1>
             </div>
@@ -65,9 +65,9 @@ export default function Home(){
         </section>
 
         <section className="projectsPage flex flex-col w-full min-h-screen">
-            <h1 className="project text-[2em] font-bold font-dm-sans text-center my-5">PERSONAL PROJECTS</h1>
+            <h1 className="project text-5xl font-bold font-dm-sans text-center my-8">/PROJECTS</h1>
 
-            <div className="flex justify-between text-[0.6em] font-bold items-center p-5">
+            <div className="filters flex justify-between text-[0.6em] font-bold items-center p-5">
                 <ul className="flex space-x-2">
                     <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all">All</li>
                     <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all">Personal Project</li>

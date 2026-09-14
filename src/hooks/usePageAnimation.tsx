@@ -2,10 +2,12 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 
-function homeAnimation(){
-    const tr = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 
-    tr.fromTo(".webdev", 
+function homeAnimation(){
+    const tl = gsap.timeline();
+
+    tl.fromTo(".webdev", 
         {
             y: -40,
             opacity: 0
@@ -126,8 +128,62 @@ function homeAnimation(){
     
 }
 
+function projectPage(){
+    const tr = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".projectsPage",
+            start: "top 80%",
+            end: "bottom 100%",
+            markers: true
+        }
+    })
+
+    tr.fromTo(".project", 
+        {
+            y: -20,
+            opacity: 0,
+            filter: "blur(10px)"
+        },
+        {
+            y: 0,
+            filter: "blur(0px)",
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut"
+        },0
+    ).fromTo(".filters", 
+        {
+            y: 20,
+            opacity: 0,
+            filter: "blur(10px)"
+        },
+        {
+            y: 0,
+            filter: "blur(0px)",
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut"
+        },0
+    ).fromTo(".card", 
+        {
+            y: -20,
+            opacity: 0,
+            filter: "blur(10px)"
+        },
+        {
+            y: 0,
+            filter: "blur(0px)",
+            opacity: 1,
+            duration: 1,
+            stagger: 0.7,
+            ease: "power2.inOut"
+        },1
+    )
+}
+
 export default function usePageAnimation(){
     useGSAP(() => {
         homeAnimation();
+        projectPage();
     }, [])
 }
