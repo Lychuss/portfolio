@@ -217,10 +217,81 @@ function servicePage(){
     )
 }
 
+function experiencePage(){
+    const tr = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".experiencePage",
+            start: "top 80%",
+            end: "bottom 60%"
+        }
+    })
+
+    tr.fromTo(".experience", 
+        {
+            y: 10,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.inOut"
+        }
+    ).fromTo(".tech", 
+        {
+            y: 10,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.inOut"
+        }
+    )
+    .fromTo(".techjobs",
+        {
+            y: 10,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power4.inOut",
+            stagger: 0.2
+        }
+    ).fromTo(".nontech", 
+        {
+            y: 10,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.inOut"
+        }
+    ).fromTo(".nontechjobs",
+        {
+            y: 10,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.inOut",
+            stagger: 0.2
+        }
+    )
+}
+
 export default function usePageAnimation(){
     useGSAP(() => {
         homeAnimation();
         projectPage();
         servicePage();
+        experiencePage();
     }, [])
 }

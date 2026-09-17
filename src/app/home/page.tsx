@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import { useRef } from 'react';
 import Cards from '@/src/components/ui/cards';
 import Service from '@/src/components/ui/service';
+import Experience from '@/src/components/ui/experience';
 
 export default function Home(){
     usePageAnimation();
@@ -84,13 +85,14 @@ export default function Home(){
             <Cards />
         </section>
 
-        <section className="servicePage flex flex-col w-full min-h-screen p-3">
+        <section className="servicePage flex flex-col w-full min-h-screen p-3 mb-2">
             <h1 className="service font-bold text-3xl font-dm-sans">SERVICE</h1>
             <Service />
         </section>
 
-        <section className="educationPage">
-
+        <section className="experiencePage flex flex-col w-full min-h-screen p-3 bg-[rgba(10,9,9,0.8)]">
+            <h1 className="experience font-bold text-3xl font-dm-sans text-white mb-5">EXPERIENCE</h1>
+            <Experience />
         </section>
 
         <section className="contactPage">
