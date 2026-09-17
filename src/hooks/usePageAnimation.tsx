@@ -76,11 +76,13 @@ function homeAnimation(){
     ).fromTo(".mypicture", 
         {
             y: 280,
-            filter: "blur(5px)"
+            filter: "blur(5px)",
+            opacity: 0
         },
         {
             y: 0,
             filter: "blur(0px)",
+            opacity: 1,
             duration: 1.6,
             ease: "power4.in"
         },1
@@ -133,8 +135,7 @@ function projectPage(){
         scrollTrigger: {
             trigger: ".projectsPage",
             start: "top 80%",
-            end: "bottom 100%",
-            markers: true
+            end: "bottom 100%"
         }
     })
 
