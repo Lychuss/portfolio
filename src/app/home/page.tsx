@@ -8,6 +8,7 @@ import usePageAnimation from '@/src/hooks/usePageAnimation';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import Cards from '@/src/components/ui/cards';
+import Service from '@/src/components/ui/service';
 
 export default function Home(){
     usePageAnimation();
@@ -65,7 +66,7 @@ export default function Home(){
         </section>
 
         <section className="projectsPage flex flex-col w-full min-h-screen">
-            <h1 className="project text-5xl font-bold font-dm-sans text-center my-8">/PROJECTS</h1>
+            <h1 className="project text-3xl font-bold font-dm-sans text-center my-4">PROJECTS</h1>
 
             <div className="filters flex justify-between text-[0.6em] font-bold items-center p-5">
                 <ul className="flex space-x-2">
@@ -83,8 +84,9 @@ export default function Home(){
             <Cards />
         </section>
 
-        <section className="servicePage">
-            
+        <section className="servicePage flex flex-col w-full min-h-screen p-3">
+            <h1 className="service font-bold text-3xl font-dm-sans">SERVICE</h1>
+            <Service />
         </section>
 
         <section className="educationPage">
