@@ -35,7 +35,7 @@ export default function Service(){
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     return <div>
         {services.map((service, i) => (
-                <div className="relative h-[150px]" key={i} onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+                <div className="service-card relative h-[150px]" key={i} onClick={() => setOpenIndex(openIndex === i ? null : i)}>
                     <div className={`absolute inset-0 z-10 w-full ${ openIndex === i ? "opacity-0" : "opacity-100"} transition-all transform duration-700`}>
                         <div className="flex flex-col border-b py-3 h-[150px] justify-end p-3">
                             <div className="flex flex-row justify-between">

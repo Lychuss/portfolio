@@ -182,9 +182,45 @@ function projectPage(){
     )
 }
 
+function servicePage(){
+    const tr = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".servicePage",
+            start: "top 80%",
+            end: "bottom 60%"
+        }
+    })
+
+    tr.fromTo(".service",
+        {
+            y: -20,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.in"
+        }
+    ).fromTo(".service-card", 
+        {
+            x: -20,
+            opacity: 0
+        },
+        {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.in"
+        }
+    )
+}
+
 export default function usePageAnimation(){
     useGSAP(() => {
         homeAnimation();
         projectPage();
+        servicePage();
     }, [])
 }
