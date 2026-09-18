@@ -25,7 +25,9 @@ let nonTech = [
 ]
 
 export default function Experience(){
-    return <div>
+    return <>
+    <h1 className="experience font-bold text-3xl font-dm-sans text-white mb-5">EXPERIENCE</h1>
+    <div>
         <h1 className="tech text-3xl text-white font-bold border-b">TECH</h1>
         {tech.map((job, i) => (
             <div className="techjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4" key={i}>
@@ -47,4 +49,5 @@ export default function Experience(){
                 </div>
             ))}
     </div>
+    </>
 }

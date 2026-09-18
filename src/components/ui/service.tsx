@@ -33,7 +33,9 @@ let services = [
 
 export default function Service(){
     const [openIndex, setOpenIndex] = useState<number | null>(null);
-    return <div>
+    return <>
+    <h1 className="service font-bold text-3xl font-dm-sans">SERVICE</h1>
+    <div>
         {services.map((service, i) => (
                 <div className="service-card relative h-[150px]" key={i} onClick={() => setOpenIndex(openIndex === i ? null : i)}>
                     <div className={`absolute inset-0 z-10 w-full ${ openIndex === i ? "opacity-0" : "opacity-100"} transition-all transform duration-700`}>
@@ -59,4 +61,5 @@ export default function Service(){
         ))}
 
     </div>
+</>
 }
