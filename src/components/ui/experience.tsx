@@ -30,8 +30,9 @@ export default function Experience(){
     <div>
         <h1 className="tech text-3xl text-white font-bold border-b">TECH</h1>
         {tech.map((job, i) => (
-            <div className="techjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4" key={i}>
-                <div className="flex flex-col items-center">
+            <div className="techjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4 
+                md:flex-row " key={i}>
+                <div className="flex flex-col items-center md:items-start">
                     <h1 className="text-white">{job.name}</h1>
                     <h1 className="text-gray-400 text-center">{job.role}</h1>
                 </div>
@@ -40,8 +41,8 @@ export default function Experience(){
         ))}
         <h1 className="nontech text-3xl text-white font-bold mt-10 border-b">NON-TECH</h1>
             {nonTech.map((job, i) => (
-                <div className="nontechjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4" key={i}>
-                    <div className="flex flex-col items-center">
+                <div className="nontechjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4 md:flex-row" key={i}>
+                    <div className="flex flex-col items-center md:items-start">
                         <h1 className="text-white">{job.name}</h1>
                         <h1 className="text-gray-400">{job.role}</h1>
                     </div>
