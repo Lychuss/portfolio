@@ -3,7 +3,28 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const links = ["Home", "Projects", "Education", "Services", "Contact"];
+  const links = [
+    {
+      name: "Home",
+      link: "mainPage"
+    },
+    {
+      name: "Projects",
+      link: "projectsPage",
+    },
+    {
+      name: "Services",
+      link: "servicePage"
+    },
+    {
+      name: "Experiences",
+      link: "experiencePage"
+    },
+    {
+      name: "Contact",
+      link: "contactPage"
+    }
+  ];
 
   return (
     <>
@@ -28,13 +49,13 @@ export default function Navbar() {
         }`}
       >
         <div className="space-y-2 flex flex-col items-center justify-center">
-          {links.map((link) => (
+          {links.map((link, i) => (
             <a
-              key={link}
-              href="#"
+              key={i}
+              href={`#${link.link}`}
               className="block text-gray-700 hover:text-blue-500 border-b"
             >
-              {link}
+              {link.name}
             </a>
           ))}
         </div>
