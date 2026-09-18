@@ -287,11 +287,33 @@ function experiencePage(){
     )
 }
 
+function contactPage(){
+    const tr = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".contactPage",
+            start: "top 60%",
+            end: "bottom 80%"
+        }
+    })
+
+    tr.fromTo(".contactPage", 
+        {
+            y: 100,
+        },
+        {
+            y: 0,
+            duration: 1,
+            ease: "power2.inOut"
+        }
+    )
+}
+
 export default function usePageAnimation(){
     useGSAP(() => {
         homeAnimation();
         projectPage();
         servicePage();
         experiencePage();
+        contactPage();
     }, [])
 }

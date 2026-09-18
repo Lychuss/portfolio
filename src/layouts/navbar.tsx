@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -9,10 +8,10 @@ export default function Navbar() {
   return (
     <>
     <nav className="navbar w-full flex justify-between">
+
       <div className="flex items-center py-[1em] px-[1em]">
         <div className="flex items-center gap-2 border border-gray-300 shadow-md rounded-full px-[0.5em] py-[0.2em]">
           <div className="rounded-full w-[10px] h-[10px] bg-green-400"></div>
-
           <h1 className="font-bold text-[0.6em]">
             Available for New Project
           </h1>

@@ -1,6 +1,6 @@
 "use client";
 
-import { SiFacebook, SiUpwork, SiGlassdoor, SiFreelancer } from '@icons-pack/react-simple-icons';
+import { SiFacebook, SiUpwork, SiIndeed, SiFreelancer } from '@icons-pack/react-simple-icons';
 import Button from "@/src/components/ui/button";
 import Image from "next/image";
 import usePageAnimation from '@/src/hooks/usePageAnimation';
@@ -10,6 +10,7 @@ import { useRef } from 'react';
 import Cards from '@/src/components/ui/cards';
 import Service from '@/src/components/ui/service';
 import Experience from '@/src/components/ui/experience';
+import Contact from '@/src/components/ui/contact';
 
 export default function Home(){
     usePageAnimation();
@@ -58,7 +59,7 @@ export default function Home(){
                 <div className="absolute inset-0">
                     <SiFacebook className="facebook absolute left-[20%] top-[20%] rotate-300 active:scale-75 transition-all duration-300 ease-in-out"/>
                     <SiUpwork className="upwork absolute left-[5%] top-[40%] rotate-20 active:scale-75 transition-all duration-300 ease-in-out"/>
-                    <SiGlassdoor className="glassdoor absolute right-[10%] top-[40%]  rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
+                    <SiIndeed className="glassdoor absolute right-[10%] top-[40%]  rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
                     <SiFreelancer className="freelancer absolute right-[25%] top-[20%] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"
                         onClick={mediaClicked}/>
                 </div>
@@ -86,17 +87,15 @@ export default function Home(){
         </section>
 
         <section className="servicePage flex flex-col w-full min-h-screen p-3 mb-2">
-            <h1 className="service font-bold text-3xl font-dm-sans">SERVICE</h1>
             <Service />
         </section>
 
         <section className="experiencePage flex flex-col w-full min-h-screen p-3 bg-[rgba(10,9,9,0.8)]">
-            <h1 className="experience font-bold text-3xl font-dm-sans text-white mb-5">EXPERIENCE</h1>
             <Experience />
         </section>
 
-        <section className="contactPage">
-
+        <section className="contactPage flex flex-col w-full min-h-screen p-5 items-center justify-center">
+            <Contact />
         </section>
         
     </main>
