@@ -1,12 +1,11 @@
 "use client";
 
 import { SiFacebook, SiUpwork, SiIndeed, SiFreelancer } from '@icons-pack/react-simple-icons';
-import Button from "@/src/components/ui/button";
 import Image from "next/image";
 import usePageAnimation from '@/src/hooks/usePageAnimation';
 
 import gsap from 'gsap';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Cards from '@/src/components/ui/cards';
 import Service from '@/src/components/ui/service';
 import Experience from '@/src/components/ui/experience';
@@ -15,15 +14,12 @@ import Contact from '@/src/components/ui/contact';
 export default function Home(){
     usePageAnimation();
 
+    const [projects, setProjects] = useState("all");
     const collabRef = useRef(null);
     const viewRef = useRef(null);
 
     const letsCollabClicked = () => {
         gsap.fromTo(collabRef.current, { scale: 0.95}, { scale: 1, duration: 1, ease: "back.out(2)"})
-    }
-
-    const mediaClicked = () => {
-
     }
 
     const viewWorkClicked = () => {
@@ -32,7 +28,7 @@ export default function Home(){
 
     return <main>
  
-        <section className="mainPage w-full flex flex-col">
+        <section id='mainPage' className="mainPage w-full flex flex-col">
 
             <div className="flex flex-col p-3">
                 <h1 className="webdev font-bold text-[2rem] items-center leading-18 tracking-tighter">WEB DEVELOPER</h1>
@@ -40,8 +36,8 @@ export default function Home(){
                     I turn your ideas into modern, responsive, and functional websites designed to 
                     bring your vision to life and help you achieve your goals.
                 </p>
-                <Button 
-                    className="letscollab rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold 
+                <a href='mailto:raphaelsanjuan6@gmail.com?subject=Chat%20message&body=Hello%20from%20the%20site'
+                    className="letscollab rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white text-center font-semibold 
                         cursor-pointer"
                     onClick={letsCollabClicked}
                     children="Let's collaborate ↗"
@@ -60,41 +56,43 @@ export default function Home(){
                     <SiFacebook className="facebook absolute left-[20%] top-[20%] rotate-300 active:scale-75 transition-all duration-300 ease-in-out"/>
                     <SiUpwork className="upwork absolute left-[5%] top-[40%] rotate-20 active:scale-75 transition-all duration-300 ease-in-out"/>
                     <SiIndeed className="glassdoor absolute right-[10%] top-[40%]  rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
-                    <SiFreelancer className="freelancer absolute right-[25%] top-[20%] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"
-                        onClick={mediaClicked}/>
+                    <SiFreelancer className="freelancer absolute right-[25%] top-[20%] rotate-10 active:scale-75 transition-all duration-300 ease-in-out"/>
                 </div>
             </div>
 
         </section>
 
-        <section className="projectsPage flex flex-col w-full min-h-screen">
+        <section id='projectsPage' className="projectsPage flex flex-col w-full min-h-screen">
             <h1 className="project text-3xl font-bold font-dm-sans text-center my-4">PROJECTS</h1>
 
             <div className="filters flex justify-between text-[0.6em] font-bold items-center p-5">
                 <ul className="flex space-x-2">
-                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all">All</li>
-                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all">Personal Project</li>
-                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all">Deployed</li>
+                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all"
+                        onClick={() => setProjects("all")}>All</li>
+                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all"
+                        onClick={() => setProjects("nondeployed")}>Non-Deployed</li>
+                    <li className="border border-gray-300 shadow-md rounded-full px-2 active:scale-95 duration-300 transition-all"
+                        onClick={() => setProjects("deployed")}>Deployed</li>
                 </ul>
-                <Button 
-                    className="viewwork border border-gray-300 shadow-md rounded-full px-2"
+                <a  href='https://github.com/Lychuss'
+                    className="viewwork border border-gray-300 shadow-md text-center rounded-full px-2"
                     onClick={viewWorkClicked}
                     children="View GitHub ↗"
                     ref={viewRef}/>
             </div>
 
-            <Cards />
+            <Cards filter={projects}/>
         </section>
 
-        <section className="servicePage flex flex-col w-full min-h-screen p-3 mb-2">
+        <section id='servicePage' className="servicePage flex flex-col w-full min-h-screen p-3 mb-2">
             <Service />
         </section>
 
-        <section className="experiencePage flex flex-col w-full min-h-screen p-3 bg-[rgba(10,9,9,0.8)]">
+        <section id='experiencePage' className="experiencePage flex flex-col w-full min-h-screen p-3 bg-[rgba(10,9,9,0.8)]">
             <Experience />
         </section>
 
-        <section className="contactPage flex flex-col w-full min-h-screen p-5 items-center justify-center">
+        <section id='contactPage' className="contactPage flex flex-col w-full min-h-screen p-5 items-center justify-center">
             <Contact />
         </section>
         
