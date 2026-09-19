@@ -5,6 +5,11 @@
   --foreground: #171717;
 }
 
+@theme {
+  --breakpoint-1\.5xl: 1360px;          
+  --breakpoint-container-1\.5xl: 1360px; 
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,7 +17,8 @@
   --font-mono: var(--font-geist-mono);
   --font-dm-sans: var(--font-dm-sans);
   --font-bungee-outline: var(--font-bungee-outline);
-  --font-bungee-inline: var(--font-bungee-inline)
+  --font-bungee-inline: var(--font-bungee-inline);
+  --font-montserrat: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
