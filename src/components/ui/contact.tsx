@@ -35,41 +35,42 @@ export default function Contact(){
     }
 
     return <>
-        <div className="flex flex-col items-center justify-center gap-8">
-            <div className="flex items-center py-[1em] px-[1em]">
+        <div className="contactPage flex flex-col items-center justify-center gap-8 bg-white w-full min-h-screen p-5 md:p-10">
+            <div className="flex items-center py-[1em] px-[1em] xl:mt-15">
                 <div className="flex items-center gap-2 border border-gray-300 shadow-md rounded-full px-[0.5em] py-[0.2em]">
                     <div className="rounded-full w-[10px] h-[10px] bg-green-400" />
-                        <h1 className="font-bold text-[1em]">
+                        <h1 className="font-bold text-[1em] xl:text-[1.2em]">
                             Available for New Project
                         </h1>
                 </div>
             </div>
-            <h1 className="text-4xl font-dm-sans font-bold text-center">
+            <h1 className="text-4xl font-dm-sans font-bold text-center md:text-5xl xl:text-6xl">
                 HAVE A PROJECT IN MIND?
             </h1>
-            <p className="text-center text-sm text-gray-400 font-semibold font-dm-sans">
-                Together, we can create something clear and impactful.
+            <p className="text-center text-sm text-gray-400 font-semibold font-dm-sans md:text-lg xl:text-2xl">
+                Together, we can create something clear and impactful. 
                 Let's collaborate to bring our ideas to life
                 in a way that resonates with everyone.
             </p>
 
             <a 
                 href="mailto:raphaelsanjuan6@gmail.com?subject=Chat%20message&body=Hello%20from%20the%20site"
-                className="contactme rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold cursor-pointer inline-flex items-center justify-center text-center"
+                className="contactme rounded-full w-45 h-auto text-xs mt-4 py-2 bg-black text-white font-semibold cursor-pointer 
+                inline-flex items-center justify-center text-center md:text-sm xl:text-lg hover:scale-110 transition-all duration-300"
                 onClick={handleContactMeClicked} 
                 ref={contactRef}
                 >
                 Contact Me ↗
             </a>
 
-            <div className="w-full flex flex-wrap items-center justify-center">
+            <div className="w-full flex flex-wrap items-center gap-2 justify-center xl:gap-10">
                 {contacts.map((contact, i) => (
-                    <div className="flex items-center mr-2 mb-5" key={i}>
+                    <div className="flex items-center mr-2 mb-5 md:text-xl" key={i}>
                         <a href={`${contact.link}`}>
                             <div className="flex items-center gap-2 border border-gray-300 shadow-md rounded-full px-[0.5em] py-[0.2em]
-                                active:scale-85">
+                                active:scale-85 hover:scale-110 transition-all duration-300">
                                 <div className={`rounded-full w-[15px] h-[15px] bg-cover bg-center`}  style={{ backgroundImage: `url(${contact.bg})`}}/>
-                                <h1 className="font-bold text-[0.6em]">
+                                <h1 className="font-bold text-[0.6em] xl:text-[1em]">
                                     {contact.name}
                                 </h1>
                             </div>

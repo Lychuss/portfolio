@@ -1,132 +1,335 @@
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { RefObject } from "react";
+
+type ContainerRef = RefObject<HTMLDivElement | null>;
 
 gsap.registerPlugin(ScrollTrigger);
 
-function homeAnimation(){
+function homeAnimation(ref: ContainerRef){
+
     const tl = gsap.timeline();
 
-    tl.fromTo(".webdev", 
-        {
-            y: -40,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1.,
-            ease: "power4.inOut"
-        },1
-    ).fromTo(".quote", 
-        {
-            y: -40,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1.,
-            ease: "power4.inOut"
-        },1
-    ).fromTo(".letscollab", 
-        {
-            y: -40,
-            opacity: 0,
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.inOut"
-        },1
-    ).fromTo(".navbar", 
-        {
-            y: -40,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1.,
-            ease: "power4.inOut"
-        },0
-    ).fromTo(".burger", 
-        {
-            y: -40,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1.,
-            ease: "power4.inOut"
-        },0
-    ).fromTo(".name", 
-        {
-            scale: 0.2,
-            opacity: 0
-        },
-        {
-            scale: 1,
-            opacity: 1,
-            duration: 1.5,
-            ease: "power4.inOut"
-        },1
-    ).fromTo(".mypicture", 
-        {
-            y: 280,
-            filter: "blur(5px)",
-            opacity: 0
-        },
-        {
-            y: 0,
-            filter: "blur(0px)",
-            opacity: 1,
-            duration: 1.6,
-            ease: "power4.in"
-        },1
-    ).fromTo(".facebook", 
-        {
-            opacity: 0,
-            filter: "blur(10px)"
-        },
-        {
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 1.1,
-        },1
-    ).fromTo(".glassdoor", 
-        {
-            opacity: 0,
-            filter: "blur(10px)"
-        },
-        {
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 1.3,
-        },1
-    ).fromTo(".freelancer", 
-        {
-            opacity: 0,
-            filter: "blur(10px)"
-        },
-        {
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 1.4,
-        },1
-    ).fromTo(".upwork", 
-        {
-            opacity: 0,
-            filter: "blur(10px)"
-        },
-        {
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 1.7,
-        },1
-    )
+    const mm = gsap.matchMedia();
+
+    tl.fromTo(".navbar", 
+            {
+                y: -40,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.,
+                ease: "power4.inOut"
+            },0
+        )
+
+    mm.add("(max-width: 640px)", () => {
+        tl.fromTo(".webdev", 
+            {
+                y: -40,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.,
+                ease: "power4.inOut"
+            },1
+        ).fromTo(".quote", 
+            {
+                y: -40,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.,
+                ease: "power4.inOut"
+            },1
+        ).fromTo(".letscollab", 
+            {
+                y: -40,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power4.inOut"
+            },1
+        ).fromTo(".burger", 
+            {
+                y: -40,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.,
+                ease: "power4.inOut"
+            },0
+        ).fromTo(".name", 
+            {
+                scale: 0.2,
+                opacity: 0
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power4.inOut"
+            },1
+        ).fromTo(".mypicture", 
+            {
+                y: 280,
+                filter: "blur(5px)",
+                opacity: 0
+            },
+            {
+                y: 0,
+                filter: "blur(0px)",
+                opacity: 1,
+                duration: 1.6,
+                ease: "power4.in"
+            },1
+        ).fromTo(".facebook", 
+            {
+                opacity: 0,
+                filter: "blur(10px)"
+            },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 1.1,
+            },1
+        ).fromTo(".glassdoor", 
+            {
+                opacity: 0,
+                filter: "blur(10px)"
+            },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 1.3,
+            },1
+        ).fromTo(".freelancer", 
+            {
+                opacity: 0,
+                filter: "blur(10px)"
+            },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 1.4,
+            },1
+        ).fromTo(".upwork", 
+            {
+                opacity: 0,
+                filter: "blur(10px)"
+            },
+            {
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 1.7,
+            },1
+        )
+    });
+
+    mm.add("(max-width: 1024px", () => {
+            tl.fromTo(".webdev", 
+                {
+                    scale: 0.6,
+                    opacity: 0
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1.,
+                    ease: "power4.inOut"
+                },1
+            ).fromTo(".quote", 
+                {
+                    scale: 0.6,
+                    opacity: 0
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1.,
+                    ease: "power4.inOut"
+                },1
+            ).fromTo(".letscollab", 
+                {
+                    y: 40,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power4.inOut"
+                },1
+            ).fromTo(".navbar", 
+                {
+                    y: -40,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.,
+                    ease: "power4.inOut"
+                },0
+            ).fromTo(".burger", 
+                {
+                    y: -40,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.,
+                    ease: "power4.inOut"
+                },0
+            ).fromTo(".name", 
+                {
+                    y: -40,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power4.inOut"
+                },1
+            ).fromTo(".mypicture", 
+                {
+                    y: 280,
+                    filter: "blur(5px)",
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    duration: 1.6,
+                    ease: "power4.in"
+                },1
+            ).fromTo(".mediaicon", 
+                {
+                    y: 50,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.inOut"
+                }
+            )
+
+            
+    })
+
+        mm.add("(max-width: 1536px", () => {
+                tl.fromTo(".webdev", 
+                    {
+                        scale: 0.6,
+                        opacity: 0
+                    },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1.,
+                        ease: "power4.inOut"
+                    },1
+                ).fromTo(".quote", 
+                    {
+                        scale: 0.6,
+                        opacity: 0
+                    },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1.,
+                        ease: "power4.inOut"
+                    },1
+                ).fromTo(".letscollab", 
+                    {
+                        y: 40,
+                        opacity: 0,
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power4.inOut"
+                    },1
+                ).fromTo(".navbar", 
+                    {
+                        y: -40,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.,
+                        ease: "power4.inOut"
+                    },0
+                ).fromTo(".burger", 
+                    {
+                        y: -40,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.,
+                        ease: "power4.inOut"
+                    },0
+                ).fromTo(".name", 
+                    {
+                        y: -40,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.5,
+                        ease: "power4.inOut"
+                    },1
+                ).fromTo(".mypicture", 
+                    {
+                        y: 280,
+                        filter: "blur(5px)",
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        filter: "blur(0px)",
+                        opacity: 1,
+                        duration: 1.6,
+                        ease: "power4.in"
+                    },1
+                ).fromTo(".mediaicon", 
+                    {
+                        y: 50,
+                        opacity: 0,
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.inOut"
+                    }
+                )
+
+                
+        })
+
     
 }
 
@@ -308,12 +511,12 @@ function contactPage(){
     )
 }
 
-export default function usePageAnimation(){
+export default function usePageAnimation(ref: ContainerRef){
     useGSAP(() => {
-        homeAnimation();
+        homeAnimation(ref);
         projectPage();
         servicePage();
         experiencePage();
         contactPage();
-    }, [])
+    }, {scope: ref});
 }

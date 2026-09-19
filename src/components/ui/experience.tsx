@@ -19,36 +19,46 @@ let tech = [
 let nonTech = [
     {
         name: "Gabriella's Catering",
-        role: "Sound System / Waiter",
+        role: "Waiter",
+        date: "Nov 2025 - Now"
+    },
+    {
+        name: "Gabriella's Catering",
+        role: "Sounds System",
+        date: "Nov 2025 - Now"
+    },
+    {
+        name: "Gabriella's Catering",
+        role: "Lights System",
         date: "Nov 2025 - Now"
     }
 ]
 
 export default function Experience(){
-    return <>
-    <h1 className="experience font-bold text-3xl font-dm-sans text-white mb-5">EXPERIENCE</h1>
-    <div>
-        <h1 className="tech text-3xl text-white font-bold border-b">TECH</h1>
+    return <div className="flex flex-col w-full min-h-screen gap-10">
+    <h1 className="experience font-bold text-3xl font-dm-sans text-white mb-5 xl:text-6xl">EXPERIENCE</h1>
+    <div className="flex flex-col">
+        <h1 className="tech text-3xl text-white font-bold border-b xl:text-5xl">TECH</h1>
         {tech.map((job, i) => (
             <div className="techjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4 
                 md:flex-row " key={i}>
-                <div className="flex flex-col items-center md:items-start">
+                <div className="flex flex-col items-center md:items-start xl:text-xl">
                     <h1 className="text-white">{job.name}</h1>
                     <h1 className="text-gray-400 text-center">{job.role}</h1>
                 </div>
-                <p className="text-gray-400">{job.date}</p>
+                <p className="text-gray-400 xl:text-xl">{job.date}</p>
             </div>
         ))}
-        <h1 className="nontech text-3xl text-white font-bold mt-10 border-b">NON-TECH</h1>
+        <h1 className="nontech text-3xl text-white font-bold mt-10 border-b xl:text-5xl">NON-TECH</h1>
             {nonTech.map((job, i) => (
                 <div className="nontechjobs flex flex-col items-center justify-between w-full border-b space-y-3 py-4 md:flex-row" key={i}>
-                    <div className="flex flex-col items-center md:items-start">
+                    <div className="flex flex-col items-center md:items-start xl:text-xl">
                         <h1 className="text-white">{job.name}</h1>
                         <h1 className="text-gray-400">{job.role}</h1>
                     </div>
-                    <p className="text-gray-400">{job.date}</p>
+                    <p className="text-gray-400 xl:text-xl">{job.date}</p>
                 </div>
             ))}
     </div>
-    </>
+    </div>
 }
