@@ -8,7 +8,7 @@ let arrProjects = [
         name: "Yes Park - E-Commerce Cafe with Xendit Gateway",
         image: "/images/yes-park-cafe.png",
         tech: ["Full-Stack", "In Progress", "Responsive", "React", "Express", "Tailwind", "PostgreSQL"],
-        link: "https://yes-park-cafe-frontend.vercel.app/home",
+        link: "https://yes-park-cafe.vercel.app/home",
         progress: "deployed",
         github: "https://github.com/Lychuss/yes-park-cafe"
     },
@@ -16,7 +16,7 @@ let arrProjects = [
         name: "Clean Quest - Image Based Game for Cleanliness",
         image: "/images/clean-quest.png",
         tech: ["Full-Stack", "In Progress", "Mobile-Web", "React", "Node", "Typescript", "Tailwind", "PostgreSQL", "Prisma", "Ollama"],
-        link: "https://cleanquest-frontend.vercel.app/home",
+        link: "https://cleanquest-game.vercel.app/home",
         progress: "deployed",
         github: "https://github.com/Lychuss/clean-quest"
     },
@@ -24,7 +24,7 @@ let arrProjects = [
         name: "Erwings - Landing Page with Modern Animation",
         image: "/images/erwings.png",
         tech: ["Frontend", "In Progress", "Responsive", "React", "Tailwind", "GSAP", "Typescript"],
-        link: "https://erwings-frontend.vercel.app/",
+        link: "https://erwings.vercel.app/",
         progress: "deployed",
         github: "https://github.com/Lychuss/erwings-frontend-"
     },
