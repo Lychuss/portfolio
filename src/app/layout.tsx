@@ -42,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       
       h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen w-full">
           {children}
         </body>
     </html>

@@ -16,13 +16,14 @@ export default function Home(){
 
     usePageAnimation(containerRef);
 
-    return <div ref={containerRef} className='xl:p-10'>
+    return <div ref={containerRef}>
         <Navbar />
+        
         <section id='mainPage' className="mainPage w-full flex flex-col">
             <Main />
         </section>
 
-        <section id='projectsPage' className="projectsPage flex flex-col w-full min-h-screen md:p-5">
+        <section id='projectsPage' className="projectsPage flex flex-col w-full min-h-screen md:p-5 bg-[rgb(161,161,161)]">
             <Cards />
         </section>
 

@@ -27,8 +27,8 @@ export default function Main(){
                 </div>
     
                 <div className='relative md:flex items-center justify-center'>
-                    <div className="name flex flex-col text-[6.5em] items-center leading-20 tracking-tighter md:text-[9em]
-                    md:leading-27 md:absolute md:top-[100px] lg:flex-row lg:text-[9em] lg:gap-5 lg:top-[150px] xl:text-[11rem] xl:gap-20 xl:top-[160px]
+                    <div className="name flex flex-col text-[6.2em] items-center leading-20 tracking-tighter md:text-[9em]
+                    md:leading-27 md:absolute md:top-[100px] lg:flex-row lg:text-[8em] lg:gap-5 lg:top-[150px] xl:text-[10rem] xl:gap-20 xl:top-[160px]
                     xl:tracking-wide">
                         <h1 className="font-montserrat font-bold text-white [-webkit-text-stroke:4px_#222] [paint-order:stroke_fill]">RAPHA</h1>
                         <h1 className="font-montserrat font-bold">MHARC</h1>
